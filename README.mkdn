@@ -1,5 +1,6 @@
-== Welcome to fupload
+# Welcome to fupload
 
+## What
 fupload is a script that'll help you in the process to upload a file or 
 group files to a server. With it you'll be able to rename files, deleting 
 empty spaces, put a prename and create a file with a list of links for that files
@@ -8,12 +9,12 @@ at the command window. Visual Fox Pro is a software for Windows platform.
 The name fupload means FoxUpload.
 
 
-== Getting started
+## Getting started
 
-1. Put all of the files that you want to upload in the main folder <tt>fupload</tt>
-2. In command window in Visual Fox Pro write the code: <tt>Set procedure to path/fupload/script/fupload.prg</tt> (now the fupload is ready to use in memory)
-3. Now write the code: <tt>Do fupload</tt> or if you can put a prename in the files write: 
-<tt>Do fupload with "prename"</tt> (this command rename the files to a friendly name withou empty spaces and
+1. Put all of the files that you want to upload in the main folder **fupload**
+2. In command window in Visual Fox Pro write the code: **Set procedure to path/fupload/script/fupload.prg** (now the fupload is ready to use in memory)
+3. Now write the code: **Do fupload** or if you can put a prename in the files write: 
+**Do fupload with "prename"** (this command rename the files to a friendly name withou empty spaces and
 copy then to the tmp directory, beyond create a log file with a HTML links for that files.)
 4. Now you must chance the link names in the log File to a human friendly link name.
 5. Copy the list of links and put into your page HTML, and copy this page to your web server.
@@ -21,7 +22,7 @@ copy then to the tmp directory, beyond create a log file with a HTML links for t
 7. "Welcome aboard: You’re riding the fupload!"
 
 
-== Description of folders
+## Description of folders
 
 tmp
   temporary folder where the files renamed stay before the final upload.
@@ -34,4 +35,18 @@ script
 
 backup
   mantain a copy of each uploaded files. The files could be deleted when necessary.	
+
+
+## Version
+
+The current version is **0.5.0**.
+
+## Licence
+
+fupload is released under the MIT licence.
+
+## Authors
+
+[Valério Farias][mt]  
+
 
