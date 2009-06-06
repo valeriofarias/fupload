@@ -47,6 +47,6 @@ fupload is released under the MIT licence.
 
 ## Authors
 
-[Valério Farias][mt]  
+Valério Farias  
 
 
