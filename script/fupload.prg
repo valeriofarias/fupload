@@ -43,7 +43,7 @@ ENDIF
 
 SET DATE TO YMD
 datahora = DTOC( DATE() ) + "__" + TIME()
-datahoralimpo = tiraespaco( datahora, "_" )
+datahoralimpo = ClearString( datahora, "_" )
 
 SET DATE TO BRITISH
 datahora = DTOC( DATE() ) + " - " + TIME()
@@ -62,9 +62,9 @@ FOR arq = 1 TO quant
 	 originalFullPath = aDocs( arq, 1 )  && nome com extensão
 	 originalName = LOWER( SUBSTR( originalFullPath, 1, LEN( originalFullPath ) - 4 ) )
 	 
-	 modifiedName = LOWER(param + tiraespaco( tiraacento( originalFullPath ) ) )  && nome sem acentos e sem espaços
-	 finalPath = LOWER( "d:\upload\temp\" + param + tiraespaco( tiraacento( originalFullPath ) ) )
-	 fileSize = fileSizeArquivo( aDocs( arq, 2 )) && return fileSize in KB, MB ou GB
+	 modifiedName = LOWER(param + ClearString( tiraacento( originalFullPath ) ) )  && nome sem acentos e sem espaços
+	 finalPath = LOWER( "d:\upload\temp\" + param + ClearString( tiraacento( originalFullPath ) ) )
+	 fileSize = FileSize( aDocs( arq, 2 )) && return fileSize in KB, MB ou GB
 	
 	 DO uploadArquivos
 	 
