@@ -50,7 +50,7 @@ datahora = DTOC( DATE() ) + " - " + TIME()
 
 quant = ADIR( aDocs )
 
-* arquivo de log que gera os links para colocar no site
+* log file that'll have links to put in site
 logFile = Fcreate( "d:\upload\temp\logupload_" + datahoralimpo + "_" + param + "n" + ALLTRIM(STR(quant)) + ".txt" )
 Fputs( logFile, "Arquivo de Log para Upload: " + datahora )
 Fputs( logFile, "Quantidade de arquivos: " + ALLTRIM(STR(quant))) 	
@@ -59,11 +59,11 @@ FPuts( logFile, "<ul>" )
 
 FOR arq = 1 TO quant
 
-	 originalFullPath = aDocs( arq, 1 )  && nome com extensão
+	 originalFullPath = aDocs( arq, 1 )  && name with extension
 	 originalName = LOWER( SUBSTR( originalFullPath, 1, LEN( originalFullPath ) - 4 ) )
 	 
-	 modifiedName = LOWER(param + ClearString( tiraacento( originalFullPath ) ) )  && nome sem acentos e sem espaços
-	 finalPath = LOWER( "d:\upload\temp\" + param + ClearString( tiraacento( originalFullPath ) ) )
+	 modifiedName = LOWER(param + ClearString( RemoveAccents( originalFullPath ) ) )  && name withou spaces and withou accents
+	 finalPath = LOWER( "d:\upload\temp\" + param + ClearString( RemoveAccents( originalFullPath ) ) )
 	 fileSize = FileSize( aDocs( arq, 2 )) && return fileSize in KB, MB ou GB
 	
 	 DO uploadArquivos
@@ -74,12 +74,12 @@ FPuts( logFile, "</ul>" )
 Fclose( logFile )
 CLEAR ALL memory 
 
-MESSAGEBOX( "Procedimento Finalizado", 64 )
+MESSAGEBOX( "End procedure", 64 )
 
 ENDPROC 
 
 ** 
-* Renaname the files and upload to
+* Rename the files and upload to
 * temp folder
 **
 PROCEDURE uploadFiles

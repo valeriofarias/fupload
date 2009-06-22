@@ -37,6 +37,29 @@ ENDFUNC
 
 
 **
+* Function: RemoveAccents()
+* 				Remove the accents in a string.
+*   Author: Vidigal - FoxBrasil group
+**
+
+FUNCTION RemoveAccents( cstringinput as String ) as String
+
+	LOCAL cstringfilterin as String, cstringfilterout as String, cstringoutput as String
+
+	cstringfilterin = "ÁÉÍÓÚáéíóúÀÈÌÒÙàèìòùÂÊÎÔÛâêîôûÄËÏÖÜäëïöüÃÕãõÇçÑñº"
+
+	cstringfilterout = "AEIOUaeiouAEIOUaeiouAEIOUaeiouAEIOUaeiouAOaoCcNno"
+
+	cstringOutput = Chrtran( cstringinput, cstringfilterin, cstringfilterout )
+
+	RETURN cstringoutput
+
+ENDFUNC
+
+
+
+
+**
 * Function:	FileSize()
 *				return the string with file size in KB or MB or GB			
 **
