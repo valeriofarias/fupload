@@ -21,7 +21,7 @@ Obs.: You must configure the server path. In fupload.prg modify the constants: *
 ## Getting started
 
 1. Put all of the files that you want to upload in the **start** folder 
-2. In command window in Visual Fox Pro write the code: **Set procedure to path/fupload/script/fupload.prg**. If you use the standard configuration the path is **c:\fupload\script\fupload.prg** (now the fupload is ready to use in memory)
+2. In command window in Visual Fox Pro write the code: **Set procedure to path/fupload/script/fupload.prg** . If you use the standard configuration the path is **c:\fupload\script\fupload.prg**  (now the fupload is ready to use in memory)
 3. Now write the code: **Do fupload** or if you can put a prename in the files write: 
 **Do fupload with "prename"** (this command rename the files to a friendly name withou empty spaces and copy then to the tmp directory, beyond create a log file with a HTML links for that files.)
 4. Now you must change the link names in the log File to a human friendly link name.
@@ -32,19 +32,19 @@ Obs.: You must configure the server path. In fupload.prg modify the constants: *
 
 ## Description of folders
 
-start 
+**start** 
   Where you must put your files that will be uploaded. The first step.
 
-tmp
+**tmp**
   temporary folder where the files renamed stay before the final upload.
 
-log
+**log**
   log files.
 
-script
+**script**
   scripts to rename the files, create the log file, and .bat for uploads.
 
-backup
+**backup**
   mantain a copy of each uploaded files. The files could be deleted when necessary.	
 
 
