@@ -1,3 +1,7 @@
-log/**
-tmp/**
-backup/**
+log/[^.]*
+tmp/[^.]*
+backup/[^.]*
+start/[^.]*
+
+
+

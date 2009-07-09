@@ -1,0 +1,12 @@
+@ECHO OFF
+ECHO Security pause. Press Enter to go on.
+PAUSE
+
+COPY c:\fupload\tmp\*.pdf pathserver\pdf\
+COPY c:\fupload\tmp\*.zip pathserver\zip\
+
+MOVE c:\fupload\tmp\*.log c:\fupload\log\
+MOVE c:\fupload\tmp\*.zip c:\fupload\backup\
+MOVE c:\fupload\tmp\*.pdf c:\fupload\backup\
+
+DEL c:\fupload\tmp\*.*

@@ -8,21 +8,32 @@ automatically. This script must be used inside the Visual Fox Pro
 at the command window. Visual Fox Pro is a software for Windows platform. 
 The name fupload means FoxUpload.
 
+## Configuring
+
+1. The standard path is **c:\fupload\**. If you prefer use fupload in another unit (eg. d:\)
+open the file: fupload.prg end modify the **DEFAULTFOLDER** constant.
+2. Rename the file **fupload.winscript** to **fupload.bat**. Open it in notepad and modify
+your server path.
+
+Obs.: You must configure the server path. In fupload.prg modify the constants: **SERVERFOLDERPDF** (server path for pdf files) and **SERVERFOLDERZIP** (server path for zip files). 
+
 
 ## Getting started
 
-1. Put all of the files that you want to upload in the main folder **fupload**
-2. In command window in Visual Fox Pro write the code: **Set procedure to path/fupload/script/fupload.prg** (now the fupload is ready to use in memory)
+1. Put all of the files that you want to upload in the **start** folder 
+2. In command window in Visual Fox Pro write the code: **Set procedure to path/fupload/script/fupload.prg**. If you use the standard configuration the path is **c:\fupload\script\fupload.prg** (now the fupload is ready to use in memory)
 3. Now write the code: **Do fupload** or if you can put a prename in the files write: 
-**Do fupload with "prename"** (this command rename the files to a friendly name withou empty spaces and
-copy then to the tmp directory, beyond create a log file with a HTML links for that files.)
-4. Now you must chance the link names in the log File to a human friendly link name.
+**Do fupload with "prename"** (this command rename the files to a friendly name withou empty spaces and copy then to the tmp directory, beyond create a log file with a HTML links for that files.)
+4. Now you must change the link names in the log File to a human friendly link name.
 5. Copy the list of links and put into your page HTML, and copy this page to your web server.
-6. Click in the fupload.bat file in the tmp folder to upload the files to the server folder.
+6. Click in the **fupload.bat** file in the script folder to upload the files to the server folder.
 7. "Welcome aboard: You’re riding the fupload!"
-
+8. You can read also a tutorial for fupload in portuguese [here](http://geyserway.com/fupload-script-visual-fox-pro-upload-de-arquivos).
 
 ## Description of folders
+
+start 
+  Where you must put your files that will be uploaded. The first step.
 
 tmp
   temporary folder where the files renamed stay before the final upload.
@@ -39,7 +50,7 @@ backup
 
 ## Version
 
-The current version is **0.5.0**.
+The current version is **1.0**.
 
 ## Licence
 
