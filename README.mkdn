@@ -10,8 +10,8 @@ The name fupload means FoxUpload.
 
 ## Configuring
 
-1. The standard path is **c:\fupload\**. If you prefer use fupload in another unit (eg. d:\)
-open the file: fupload.prg end modify the **DEFAULTFOLDER** constant.
+1. The standard path is c:\fupload\. If you prefer use fupload in another unit (eg. d:\)
+open the file: fupload.prg and modify the **DEFAULTFOLDER** constant.
 2. Rename the file **fupload.winscript** to **fupload.bat**. Open it in notepad and modify
 your server path.
 
@@ -32,19 +32,19 @@ Obs.: You must configure the server path. In fupload.prg modify the constants: *
 
 ## Description of folders
 
-**start** 
+**start:** 
   Where you must put your files that will be uploaded. The first step.
 
-**tmp**
+**tmp:**
   temporary folder where the files renamed stay before the final upload.
 
-**log**
+**log:**
   log files.
 
-**script**
+**script:**
   scripts to rename the files, create the log file, and .bat for uploads.
 
-**backup**
+**backup:**
   mantain a copy of each uploaded files. The files could be deleted when necessary.	
 
 
