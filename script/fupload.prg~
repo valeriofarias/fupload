@@ -1,7 +1,7 @@
 **
-* Software:			fupload Version 1.2
+* Software:			fupload Version 1.0
 * Programmer:		Valério Farias
-* Comments:		   Modify the file name, deleting the empty spaces and copy files to tmp folder
+* Comments:		   Rename the files in start directory eliminating the empty spaces and accents.   *                 Then copy file to tmp folder.
 **
 
 SET CENTURY ON
@@ -50,6 +50,7 @@ ELSE
 ENDIF 
 
 
+
 SET DATE TO YMD
 dateandtime = DTOC( DATE() ) + "__" + TIME()
 dateandtimeonlynumbers = ClearString( dateandtime, "_" )
@@ -57,26 +58,23 @@ dateandtimeonlynumbers = ClearString( dateandtime, "_" )
 SET DATE TO BRITISH
 dateandtime = DTOC( DATE() ) + " - " + TIME()
 
-quant = ADIR( aDocs )
+number = ADIR( aDocs )
 
 * log file will have links to put in site
-logFile = Fcreate( TMPFOLDER + "logupload_" + dateandtimeonlynumbers + "_" + param + "n" + ALLTRIM(STR(quant)) + ".txt" )
+logFile = Fcreate( TMPFOLDER + "logupload_" + dateandtimeonlynumbers + "_" + param + "n" + ALLTRIM(STR(number)) + ".txt" )
 Fputs( logFile, "Log file for upload: " + dateandtime )
-Fputs( logFile, "Quantity of files: " + ALLTRIM(STR(quant))) 	
+Fputs( logFile, "Number of files: " + ALLTRIM(STR(number))) 	
 FPuts( logFile, "" )
 FPuts( logFile, "<ul>" )
 
-FOR arq = 1 TO quant
-
+FOR arq = 1 TO number
     ? aDocs( arq, 1 )
 	 originalFullPath = aDocs( arq, 1 )  && name with extension
-	 originalName = RecoverSpaces( LOWER( JUSTSTEM( originalFullPath ) ) )
-	 firstletter  = UPPER( LEFT( originalName, 1 ) )
-	 originalName = STUFF( originalName, 1, 1, firstletter )
+	 originalName = LOWER( SUBSTR( originalFullPath, 1, LEN( originalFullPath ) - 4 ) )
 	 
-	 modifiedName = LOWER( param + ClearString( RemoveAccents( originalFullPath ) ) )  && name without spaces and without accents
-	 finalPath 	  = LOWER( TMPFOLDER + modifiedName )
-	 fileSize     = FileSize( aDocs( arq, 2 ) ) && return fileSize in KB, MB ou GB
+	 modifiedName = LOWER(param + ClearString( RemoveAccents( originalFullPath ) ) )  && name without spaces and without accents
+	 finalPath = LOWER( TMPFOLDER + param + ClearString( RemoveAccents( originalFullPath ) ) )
+	 fileSize = FileSize( aDocs( arq, 2 ) ) && return fileSize in KB, MB ou GB
 	
 	 DO uploadFiles
 	 
@@ -92,7 +90,7 @@ ENDPROC
 
 ** 
 * Rename the files and upload to
-* temp folder
+* tmp folder
 **
 PROCEDURE uploadFiles
 

@@ -1,6 +1,6 @@
 **
 * Functions for fupload.prg
-* functions.prg v1.2
+* functions.prg v1.0
 * Author: Valério Farias
 **
 
@@ -17,16 +17,11 @@ FUNCTION ClearString( cstringinput as String, cparamimput as String ) as String
 		 cstringoutput  = STRTRAN( cstringinput,  ' - ' , '_' )
 		 cstringoutput  = STRTRAN( cstringoutput, '- '  , '_' )
 		 cstringoutput  = STRTRAN( cstringoutput, ' -'  , '_' )
-		 cstringoutput  = STRTRAN( cstringoutput, '-'   , '_' )
 		 cstringoutput  = STRTRAN( cstringoutput, ' _ ' , '_' )
-		 cstringoutput  = STRTRAN( cstringoutput, '_ '  , '_' )
-		 cstringoutput  = STRTRAN( cstringoutput, ' _'  , '_' )
 		 cstringoutput  = STRTRAN( cstringoutput, ' '   , '_' )
 		 cstringoutput  = STRTRAN( cstringoutput, ','   , ''  )
 		 cstringoutput  = STRTRAN( cstringoutput, 'º'   , ''  )
-		 cstringoutput  = STRTRAN( cstringoutput, 'ª'   , ''  )
-		 cstringoutput  = STRTRAN( cstringoutput, ' .'  , ''  ) 
-		      
+		 cstringoutput  = STRTRAN( cstringoutput, 'ª'   , ''  )      
 	
 	ELSE 
 	
@@ -39,30 +34,6 @@ FUNCTION ClearString( cstringinput as String, cparamimput as String ) as String
 	RETURN cstringoutput 
 
 ENDFUNC 
-
-
-**
-* Function:	RecoverSpaces()
-*				change "first-test" to "first test" 
-**
-FUNCTION RecoverSpaces( cstringinput as String ) as String 
-	
-	LOCAL cstringoutput as String 
-	
-	cstringoutput  = STRTRAN( cstringinput,  ' - ' , ' ' )
-	cstringoutput  = STRTRAN( cstringoutput, '- '  , ' ' )
-	cstringoutput  = STRTRAN( cstringoutput, ' -'  , ' ' )
-	cstringoutput  = STRTRAN( cstringoutput, '-'   , ' ' )
-	cstringoutput  = STRTRAN( cstringoutput, ' _ ' , ' ' )
-	cstringoutput  = STRTRAN( cstringoutput, '_ '  , ' ' )
-	cstringoutput  = STRTRAN( cstringoutput, ' _'  , ' ' )
-	cstringoutput  = STRTRAN( cstringoutput, '_'   , ' ' )
-
-	RETURN cstringoutput 
-
-ENDFUNC 
-
-
 
 
 **
